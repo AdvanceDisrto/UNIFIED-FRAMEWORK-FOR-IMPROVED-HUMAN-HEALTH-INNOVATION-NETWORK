@@ -1,1 +1,18 @@
-{"name":"uffihhin-evidence-runtime","version":"0.1.0","private":true,"type":"module","scripts":{"build":"tsc -p tsconfig.json","test":"npm run build && node --test dist/test/*.test.js","smoke":"npm run build && node dist/src/smoke.js","verify:all":"npm test && npm run smoke"},"devDependencies":{"typescript":"^5.9.2","@types/node":"^24.3.0"}}
+{
+  "name": "uffihhin-evidence-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "smoke": "npm run build && node dist/src/smoke.js",
+    "verify:all": "npm test && npm run smoke && npm run solidity:check",
+    "solidity:check": "solcjs --bin --abi contracts/CarbonEvidenceRegistry.sol -o dist/solidity"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "@types/node": "^24.3.0",
+    "solc": "^0.8.30"
+  }
+}
