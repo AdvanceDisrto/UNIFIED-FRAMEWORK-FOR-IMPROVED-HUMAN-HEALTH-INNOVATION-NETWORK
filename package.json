@@ -1,15 +1,2 @@
 {
-  "name": "uffihhin-evidence-runtime",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "test": "npm run build && node --test dist/test/*.test.js",
-    "smoke": "npm run build && node dist/src/smoke.js",
-    "settlement:smoke": "npm run build && node dist/src/settlement-smoke.js",
-    "verify:all": "npm test && npm run smoke && npm run settlement:smoke && npm run solidity:check",
-    "solidity:check": "solcjs --bin --abi contracts/CarbonEvidenceRegistry.sol -o dist/solidity"
-  },
-  "devDependencies": {"typescript": "^5.9.2","@types/node": "^24.3.0","solc": "^0.8.30"}
-}
+"name":"uffihhin-evidence-runtime","version":"0.1.0","private":true,"type":"module","scripts":{"build":"tsc -p tsconfig.json","test":"npm run build && node --test dist/test/*.test.js","smoke":"npm run build && node dist/src/smoke.js","settlement:smoke":"npm run build && node dist/src/settlement-smoke.js","registry:smoke":"npm run build && node dist/src/registry-smoke.js","verify:all":"npm test && npm run smoke && npm run settlement:smoke && npm run registry:smoke && npm run solidity:check","solidity:check":"solcjs --bin --abi contracts/CarbonEvidenceRegistry.sol -o dist/solidity"},"devDependencies":{"typescript":"^5.9.2","@types/node":"^24.3.0","solc":"^0.8.30"}}
